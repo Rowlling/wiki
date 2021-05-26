@@ -1,6 +1,7 @@
 package com.zhuanye.wiki.config;
 
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -10,6 +11,7 @@ import org.springframework.core.env.Environment;
 @ComponentScan("com.zhuanye")//因为ComponentScan类只扫描该类下的子包，该文件不在controller下，与其是并列关系，不在@RestController的扫描范围内，因此需要手动导入
 //@ComponentScan({"com.zhuanye","com.test"})//扫描多个包
 @SpringBootApplication
+@MapperScan("com.zhuanye.wiki.mapper")
 public class WikiApplication {
 
     private static final Logger LOG = LoggerFactory.getLogger(WikiApplication.class);
