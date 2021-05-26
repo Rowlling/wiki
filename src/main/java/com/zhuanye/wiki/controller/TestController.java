@@ -1,16 +1,16 @@
 package com.zhuanye.wiki.controller;
 
-import org.springframework.stereotype.Controller;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.Map;
 
 @RestController//返回字符串
 //@Controller//返回页面
 public class TestController {
+    @Value("${test.hello:TEST}")
+    private String testHello;
+
    /* restful http请求方式有四种
     GET查询
     POST新增
@@ -27,7 +27,7 @@ public class TestController {
     //@RequestMapping("/hello")//http://127.0.0.1:18080/hello
     @GetMapping("/hello")
     public String hello(){
-        return "Hello World!";
+        return "Hello World!" + testHello;
     }
 
     @PostMapping("/hello/post")
