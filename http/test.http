@@ -3,13 +3,13 @@ GET http://localhost:18080/hello
 
 //单元测试（结果验证的脚本）
 > {%
-   client.test("test-hello", function() { //测试名字，测试方法
-   client.log("测试/hello接口"); //写日志
-   client.log(response.body); //将请求的结果打印出来
-   client.log(JSON.stringify(response.body)); // 用JSON表达式转为String
-   client.assert(response.status === 200, "返回码不是200"); //验证返回码，若为200，测试通过，否则输出"返回码不是200"
-   client.assert(response.body === "Hello World!", "结果验证失败"); //验证返回值
- });
+ //   client.test("test-hello", function() { //测试名字，测试方法
+ //   client.log("测试/hello接口"); //写日志
+ //   client.log(response.body); //将请求的结果打印出来
+ //   client.log(JSON.stringify(response.body)); // 用JSON表达式转为String
+ //   client.assert(response.status === 200, "返回码不是200"); //验证返回码，若为200，测试通过，否则输出"返回码不是200"
+ //   client.assert(response.body === "Hello World!", "结果验证失败"); //验证返回值
+ // });
 %}
 ###
 POST http://localhost:18080/hello/post
