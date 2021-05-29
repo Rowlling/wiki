@@ -1,5 +1,6 @@
-GET http://localhost:18080/ebook/list
+GET http://localhost:18080/ebook/list?name=Vue 入门教程
 
 ###
+
 
 
